@@ -1,0 +1,43 @@
+@charset "UTF-8";
+// 主颜色
+$color-main: #00aab7;
+// 辅颜色
+$color-second: #b45d01;
+// 文字主颜色
+$color-text: #010101;
+// 文字灰色
+$text-gray: #a0a0a0;
+// 主体宽度
+$container: 1200px;
+
+// 定义浏览器内核属性
+@mixin webkit($type, $value){
+  -webkit-#{$type}: $value;
+  -moz-#{$type}: $value;
+  -ms-#{$type}: $value;
+  -o-#{$type}: $value;
+  #{$type}: $value;
+}
+
+// Scss封装清浮动
+%clearfix {
+  height: 1%;
+  &:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+/*
+  文本超出，省略号表示
+  兼容IE8.IE9
+*/
+@mixin ell($number) {
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
